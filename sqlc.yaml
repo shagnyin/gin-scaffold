@@ -1,0 +1,12 @@
+version: "2"
+sql:
+  - schema: "./database/schema"  # 数据库表结构存放位置
+    queries: "./database/queries" # 数据库ddl语句存放位置
+    engine: "mysql" # 数据库引擎
+    gen:
+      go:
+        package: "model"
+        out: "./internal/model"
+        emit_result_struct_pointers: true
+        emit_params_struct_pointers: true
+        emit_json_tags: true
